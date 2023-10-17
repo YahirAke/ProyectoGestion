@@ -28,10 +28,16 @@ if(isset($procedimiento) == 'InicioSesion') {
         if ($stmt->execute()) {
             $result = $stmt->get_result();
             $data = array();
-            while ($row = $result->fetch_assoc()) {
-                $data[] = $row;
+            if(empty($result->fetch_assoc())){
+                echo 0;
+            } else {
+                echo 1;
             }
-            echo json_encode($data);
+            //while ($row = $result->fetch_assoc()) {
+            //    $data[] = $row;
+            //}
+            //echo json_encode($data)
+            
         } else {
             echo "Error al ejecutar el procedimiento: " . $stmt->error;
         }
