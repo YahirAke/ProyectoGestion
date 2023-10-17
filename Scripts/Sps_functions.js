@@ -19,7 +19,14 @@ function Iniciar() {
             //Si es un echo que devuelva
             //$("#resultado").html(response);
             if(response == 1){
-                window.location.href = 'Principal.html';
+                jQuery.gritter.add({
+                    title: 'Inicio Exitoso',
+                    text: 'Holaaaaaaaaaa',
+            class_name: 'growl-danger',
+                        sticky: false,
+                        time: ''
+                });
+                //window.location.href = 'Principal.html';
             } else {
                 alert('El usuario o contraseña es no es valido');
             }
