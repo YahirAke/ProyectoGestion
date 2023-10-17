@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.gritter.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="image0.png" rel="stylesheet">
   </head>
@@ -34,8 +35,6 @@
       <div id="resultado"></div>
   </div>
   <script src="Scripts/Sps_functions.js"></script>
-  <script>
-    
-  </script>
+  <script src="Scripts/jquery.gritter.min.js"></script>
   </body>
 </html>
