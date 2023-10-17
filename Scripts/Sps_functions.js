@@ -4,8 +4,8 @@ function enviarFormulario(event) {
 
 //***************INICIO DE SESION ***************************
 function Iniciar() {
-    var p_usuario = document.getElementById("usuario").value;
-    var p_Password = document.getElementById("password").value;
+    let p_usuario = document.getElementById("usuario").value;
+    let p_Password = document.getElementById("password").value;
     // Agrega más parámetros según sea necesario
 
     $.ajax({
