@@ -14,7 +14,7 @@ function Iniciar() {
         data: { procedimiento: 'InicioSesion', Usuario: p_usuario, Password: p_Password },
         success: function(response) {
             //Si es una tabla que devuelva esto
-            //var data = JSON.parse(response);
+            //var data = JSON.parse(response)
             //buildTable(data);
             //Si es un echo que devuelva
             //$("#resultado").html(response);
