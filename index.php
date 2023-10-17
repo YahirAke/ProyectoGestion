@@ -12,16 +12,16 @@
       <img src="imagenes/engranajes.png" class="profile" height="100px" width="100px">
       <h2>Loggin</h2>
    
-      <form>
+      <form onsubmit="enviarFormulario(event)">
         
           <p class="lable">Usuarios</p>
 
-          <input type="number" placeholder="@itsmotul.edu.mx" id="usuario">
+          <input type="email" placeholder="@itsmotul.edu.mx" id="usuario">
           <p class="lable">Contraseña</p>
           <input type="password" placeholder="Contraseña" id="password">       
 
           <div class="button-container">
-            
+
             <input id="btnIngresar" onclick="Iniciar()" type="submit" value="Ingresar">
          
             <input type="submit" value="Registrarse">
@@ -30,7 +30,7 @@
         <a href="#" class="forpas">Olvidaste tu contraseña?</a>
        
       </form>
-      <button id="btnIngresar" onclick="Iniciar()"> Ingresar </button>
+      
       <div id="resultado"></div>
   </div>
   <script src="Scripts/Sps_functions.js"></script>
