@@ -14,6 +14,7 @@ if ($conn->connect_error) {
 
 // Obtener el procedimiento y los parámetros de la solicitud POST
 $procedimiento = $_POST['procedimiento'];
+
 if(isset($procedimiento) == 'InicioSesion') {
     $Usuario = isset($_POST['Usuario']) ? $_POST['Usuario'] : '';
     $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
