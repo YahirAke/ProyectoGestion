@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejecutar Procedimiento MySQL</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function ejecutarProcedimiento() {
+            var parametro1 = 1; // Ejemplo de parámetro 1
+            var parametro2 = "example"; // Ejemplo de parámetro 2
+            $.ajax({
+                url: "cn.php",
+                type: "GET",
+                data: { procedimiento: 'InicioSesion', usuario: 20070023, password: '12345678' },
+                success: function(response) {
+                    $("#resultado").html(response);
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="ejecutarProcedimiento()">Ejecutar Procedimiento</button>
+    <div id="resultado"></div>
+</body>
+</html>
