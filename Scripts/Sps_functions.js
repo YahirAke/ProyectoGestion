@@ -1,6 +1,8 @@
 function enviarFormulario(event) {
     event.preventDefault()
 }
+
+//***************INICIO DE SESION ***************************
 function Iniciar() {
     var p_usuario = document.getElementById("usuario").value;
     var p_Password = document.getElementById("password").value;
@@ -45,3 +47,5 @@ function buildTable(data) {
     table += "</table>";
     $("#resultado").html(table);
 }
+
+//**************************REGISTRARSE****************************
