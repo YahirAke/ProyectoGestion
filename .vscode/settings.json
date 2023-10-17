@@ -1,3 +1,4 @@
 {
-    "notebook.stickyScroll.enabled": true
+    "notebook.stickyScroll.enabled": true,
+    "liveServer.settings.port": 5501
 }
