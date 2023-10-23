@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="css/jquery.gritter.css">
   <link href="image0.png" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="Scripts/jquery-3.7.1.js"></script>
   </head>
   <body>
@@ -29,7 +28,7 @@
           <p class="lable">Confirmar contraseña</p>
           <input type="password" placeholder="********" id="Conf_password">        
 
-            <input onclick="registrarse()" type="submit" value="Registrarse">
+            <input id="btnregistro" onclick="registrarse();" type="submit" value="Registrarse">
 
       </form>
     

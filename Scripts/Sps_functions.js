@@ -57,7 +57,7 @@ function buildTable(data) {
 
 //**************************REGISTRARSE****************************
 
-function registrarse(){
+function registrarse() {
     alert("hola");
     let Mat = document.getElementById('Matricula').value;
     let Nom = document.getElementById('Nombre').value;
