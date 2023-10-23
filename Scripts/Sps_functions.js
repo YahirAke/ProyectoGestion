@@ -20,13 +20,13 @@ function Iniciar() {
             //$("#resultado").html(response);
             if(response == 1){
                 jQuery.gritter.add({
-                    title: 'Inicio Exitoso',
-                    text: 'Holaaaaaaaaaa',
-            class_name: 'growl-danger',
+                    title: '!EXITO!',
+                    text: 'Has Iniciado Sesion Correctamente',
+            class_name: 'growl-success',
                         sticky: false,
                         time: ''
                 });
-                //window.location.href = 'Principal.html';
+                setTimeout(() => {  window.location.href = 'Principal.html';}, 2000);
             } else {
                 alert('El usuario o contraseña es no es valido');
             }
