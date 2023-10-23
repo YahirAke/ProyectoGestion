@@ -50,7 +50,7 @@ if($procedimiento == 'InicioSesion') {
     $Matricula = isset($_POST['Matricula']) ? $_POST['Matricula'] : '';
     $Nombre = isset($_POST['Nombre']) ? $_POST['Nombre'] : '';
     $Email = isset($_POST['Email']) ? $_POST['Email'] : '';
-    $Apellido = isset($_POST['Apellido']) ? $_POST['Apeliido'] : '';
+    $Apellido = isset($_POST['Apellido']) ? $_POST['Apellido'] : '';
     $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
     // Obtén más parámetros según sea necesario
 
@@ -63,10 +63,12 @@ if($procedimiento == 'InicioSesion') {
         if ($stmt->execute()) {
             $result = $stmt->get_result();
             $data = array();
-            if(($result->fetch_assoc()) == 1){
-                echo $result;
+            $row = $result->fetch_assoc();
+            $resultado = (bool)$row;
+            if($resultado){
+                echo 1;
             } else {
-                echo $result;
+                echo 0;
             }
             //while ($row = $result->fetch_assoc()) {
             //    $data[] = $row;

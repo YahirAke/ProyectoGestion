@@ -78,7 +78,7 @@ function registrarse() {
             Password: Pass
             },
             success: function(response) {
-                if(response == 1){
+                if(response == 0){
                     jQuery.gritter.add({
                         title: '!EXITO!',
                         text: 'Has sido registrado exitosamente',
@@ -89,7 +89,7 @@ function registrarse() {
                     setTimeout(() => {  window.location.href = 'index.php';}, 2000);
                 } else {
                     alert(response);
-                    alert('El usuario o contraseña es no es valido');
+                    alert('El usuario ya existe');
                 }
             },
             error: function(xhr, status, error) {
