@@ -60,43 +60,14 @@ else if(isset($procedimiento) == 'Registrarse'){
     $stmt = $conn->prepare($sql);
 
     if ($stmt) {
-        $stmt->bind_param('ss', $Matricula, $Email, $Nombre, $Apellido, $Password); // Ajusta el tipo de datos según tus necesidades
+        $stmt->bind_param('sssss', $Matricula, $Email, $Nombre, $Apellido, $Password); // Ajusta el tipo de datos según tus necesidades
         if ($stmt->execute()) {
             $result = $stmt->get_result();
             $data = array();
-            if(empty($result->fetch_assoc())){
-                echo 0;
+            if(($result->fetch_assoc()) == 1){
+                echo $result;
             } else {
-                echo 1;
-            }
-            //while ($row = $result->fetch_assoc()) {
-            //    $data[] = $row;
-            //}
-            //echo json_encode($data)
-            
-        } else {
-            echo "Error al ejecutar el procedimiento: " . $stmt->error;
-        }
-        $stmt->close();
-    } else {
-        echo "Error al preparar la sentencia: " . $conn->error;
-    }
-    $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
-    // Obtén más parámetros según sea necesario
-
-    $sql = "CALL $procedimiento(?, ?)"; // Ajusta la consulta de acuerdo a la cantidad de parámetros
-
-    $stmt = $conn->prepare($sql);
-
-    if ($stmt) {
-        $stmt->bind_param('ss', $Usuario, $Password); // Ajusta el tipo de datos según tus necesidades
-        if ($stmt->execute()) {
-            $result = $stmt->get_result();
-            $data = array();
-            if(empty($result->fetch_assoc())){
-                echo 0;
-            } else {
-                echo 1;
+                echo $result;
             }
             //while ($row = $result->fetch_assoc()) {
             //    $data[] = $row;

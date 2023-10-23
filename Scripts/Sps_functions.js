@@ -58,7 +58,6 @@ function buildTable(data) {
 //**************************REGISTRARSE****************************
 
 function registrarse() {
-    alert("hola");
     let Mat = document.getElementById('Matricula').value;
     let Nom = document.getElementById('Nombre').value;
     let Ape = document.getElementById('Apellido').value;
@@ -67,6 +66,7 @@ function registrarse() {
     let C_pass = document.getElementById('Conf_password').value;
 
     if(Pass === C_pass){
+        alert("hola");
         $.ajax({
             url: "Cn/cn.php",
             type: "POST",
@@ -88,6 +88,7 @@ function registrarse() {
                     });
                     setTimeout(() => {  window.location.href = 'index.php';}, 2000);
                 } else {
+                    alert(response);
                     alert('El usuario o contraseña es no es valido');
                 }
             },
