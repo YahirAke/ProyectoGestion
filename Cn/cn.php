@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 // Obtener el procedimiento y los parámetros de la solicitud POST
 $procedimiento = $_POST['procedimiento'];
 
-if(isset($procedimiento) == 'InicioSesion') {
+if($procedimiento == 'InicioSesion') {
     $Usuario = isset($_POST['Usuario']) ? $_POST['Usuario'] : '';
     $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
     // Obtén más parámetros según sea necesario
@@ -46,8 +46,7 @@ if(isset($procedimiento) == 'InicioSesion') {
     } else {
         echo "Error al preparar la sentencia: " . $conn->error;
     }
-}
-else if(isset($procedimiento) == 'Registrarse'){
+} else if($procedimiento == 'Registrarse'){
     $Matricula = isset($_POST['Matricula']) ? $_POST['Matricula'] : '';
     $Nombre = isset($_POST['Nombre']) ? $_POST['Nombre'] : '';
     $Email = isset($_POST['Email']) ? $_POST['Email'] : '';
