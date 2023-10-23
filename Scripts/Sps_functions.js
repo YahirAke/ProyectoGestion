@@ -56,3 +56,44 @@ function buildTable(data) {
 }
 
 //**************************REGISTRARSE****************************
+
+function registrarse(){
+    alert("hola");
+    let Mat = document.getElementById('Matricula').value;
+    let Nom = document.getElementById('Nombre').value;
+    let Ape = document.getElementById('Apellido').value;
+    let Email_t = document.getElementById('Email').value;
+    let Pass = document.getElementById('Password').value;
+    let C_pass = document.getElementById('Conf_password').value;
+
+    if(Pass === C_pass){
+        $.ajax({
+            url: "Cn/cn.php",
+            type: "POST",
+            data: { procedimiento: 'Registrarse',
+            Matricula: Mat,
+            Nombre: Nom,
+            Apellido: Ape,
+            Email: Email_t,
+            Password: Pass
+            },
+            success: function(response) {
+                if(response == 1){
+                    jQuery.gritter.add({
+                        title: '!EXITO!',
+                        text: 'Has sido registrado exitosamente',
+                class_name: 'growl-success',
+                            sticky: false,
+                            time: ''
+                    });
+                    setTimeout(() => {  window.location.href = 'index.php';}, 2000);
+                } else {
+                    alert('El usuario o contraseña es no es valido');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
+}

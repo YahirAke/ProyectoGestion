@@ -48,8 +48,40 @@ if(isset($procedimiento) == 'InicioSesion') {
     }
 }
 else if(isset($procedimiento) == 'Registrarse'){
-    $parametro1 = isset($_POST['parametro1']) ? $_POST['parametro1'] : '';
-    $parametro2 = isset($_POST['parametro2']) ? $_POST['parametro2'] : '';
+    $Matricula = isset($_POST['Matricula']) ? $_POST['Matricula'] : '';
+    $Nombre = isset($_POST['Nombre']) ? $_POST['Nombre'] : '';
+    $Email = isset($_POST['Email']) ? $_POST['Email'] : '';
+    $Apellido = isset($_POST['Apellido']) ? $_POST['Apeliido'] : '';
+    $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
+    // Obtén más parámetros según sea necesario
+
+    $sql = "SELECT $procedimiento(?, ?, ?, ?, ?)"; // Ajusta la consulta de acuerdo a la cantidad de parámetros
+
+    $stmt = $conn->prepare($sql);
+
+    if ($stmt) {
+        $stmt->bind_param('ss', $Matricula, $Email, $Nombre, $Apellido, $Password); // Ajusta el tipo de datos según tus necesidades
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            $data = array();
+            if(empty($result->fetch_assoc())){
+                echo 0;
+            } else {
+                echo 1;
+            }
+            //while ($row = $result->fetch_assoc()) {
+            //    $data[] = $row;
+            //}
+            //echo json_encode($data)
+            
+        } else {
+            echo "Error al ejecutar el procedimiento: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        echo "Error al preparar la sentencia: " . $conn->error;
+    }
+    $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
     // Obtén más parámetros según sea necesario
 
     $sql = "CALL $procedimiento(?, ?)"; // Ajusta la consulta de acuerdo a la cantidad de parámetros
@@ -57,9 +89,20 @@ else if(isset($procedimiento) == 'Registrarse'){
     $stmt = $conn->prepare($sql);
 
     if ($stmt) {
-        $stmt->bind_param('ss', $parametro1, $parametro2); // Ajusta el tipo de datos según tus necesidades
+        $stmt->bind_param('ss', $Usuario, $Password); // Ajusta el tipo de datos según tus necesidades
         if ($stmt->execute()) {
-            echo 'se ejecuto correctamente';
+            $result = $stmt->get_result();
+            $data = array();
+            if(empty($result->fetch_assoc())){
+                echo 0;
+            } else {
+                echo 1;
+            }
+            //while ($row = $result->fetch_assoc()) {
+            //    $data[] = $row;
+            //}
+            //echo json_encode($data)
+            
         } else {
             echo "Error al ejecutar el procedimiento: " . $stmt->error;
         }
