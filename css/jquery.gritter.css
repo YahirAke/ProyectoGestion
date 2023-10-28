@@ -1,7 +1,7 @@
 
 #gritter-notice-wrapper {
 	position:fixed;
-	top:20px;
+	top:80px;
 	right:20px;
 	width:301px;
 	z-index:9999;
@@ -39,9 +39,9 @@
 
 .gritter-item {
 	display:block;
-	color:#eee;
+	color:#ffffff;
 	padding: 15px;
-	font-size: 11px;
+	font-size: 18px;
 }
 
 .gritter-item p {
@@ -49,7 +49,7 @@
 	margin:0;
 	word-wrap:break-word;
 	line-height: 18px;
-	font-size: 13px;
+	font-size: 18px;
 	opacity: 0.75;
 }
 
@@ -64,6 +64,11 @@
 	height:11px;
 	text-indent:-9999em;
 	opacity: 0.5;
+}
+
+.gritter-without-image p {
+	color: #fff;
+	opacity: 1;
 }
 
 .gritter-title {

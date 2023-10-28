@@ -3,7 +3,7 @@
   <title>Registro</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="css/style_index.css">
   <link rel="stylesheet" type="text/css" href="css/jquery.gritter.css">
   <link href="image0.png" rel="stylesheet">
   <script src="Scripts/jquery-3.7.1.js"></script>

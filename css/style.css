@@ -1,9 +1,114 @@
+@font-face {
+  font-family: 'Caviar Dreams Bold';
+  src: url('font/CaviarDreams_Bold.ttf') format('truetype');
+  /* Otras propiedades opcionales para especificar el estilo y la variación de la fuente */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Caviar Dreams';
+  src: url('font/CaviarDreams.ttf') format('truetype');
+  /* Otras propiedades opcionales para especificar el estilo y la variación de la fuente */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Louis George';
+  src: url('font/LGC.ttf') format('truetype');
+  /* Otras propiedades opcionales para especificar el estilo y la variación de la fuente */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Louis George Bold';
+  src: url('font/LGCBold.ttf') format('truetype');
+  /* Otras propiedades opcionales para especificar el estilo y la variación de la fuente */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Louis George Light';
+  src: url('font/LGCLight.ttf') format('truetype');
+  /* Otras propiedades opcionales para especificar el estilo y la variación de la fuente */
+  font-weight: lighter;
+  font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
   }
+
+  /***********************************/
+  .panel-main {
+    position: relative;
+    width: 90%;
+    top: 70px;
+    left: 10%;
+    padding: 20px;
+  }
+
+  .label-text{
+    font-family: 'Louis George Bold', sans-serif;
+    color: #000;
+  }
+
+  .sub-title{
+    font-family: 'Caviar Dreams Bold', sans-serif;
+    color: #000c5b;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .campo_B.upcase {
+    text-transform: uppercase;
+  }
+
+  .campo_B {
+    font-family: 'Louis George', sans-serif;
+    border-radius: 10px;
+  }
+
+  .btn-s {
+    border-radius: 15px;
+  }
+
+  table thead tr th {
+    font-family: 'Louis George Bold', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  table tbody tr td {
+    font-family: Louis George, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+  }  
+
+  .table-data tbody tr:hover {
+    background: #4488aa;
+    color: white;
+  }
+  /*.table tr th {
+    border: 2px solid #000;
+    background: rgb(141, 188, 250);
+    color: #fff;
+  }
+
+  .table tr {
+    border: 2px solid #000;
+  }
+
+  .table td {
+    border: 2px solid #000;
+    padding: 2px;
+  }  
   /*********estilos generales*********/
   .borrar-flotacion {
     float: none;
