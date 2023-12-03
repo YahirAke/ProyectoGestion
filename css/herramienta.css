@@ -314,6 +314,25 @@ table a i {
     color: #fff;
 }
 
+.btn-third {
+    -webkit-background-size: 200% 200%;
+    background-size: 200%;
+    background-position: 50%;
+    color: #fff;
+    background-color: #A93226;
+}
+
+.btn-third:hover,
+.btn-third:active:hover,
+.btn-third:focus {
+    background-color: #C0392B;
+    color: #fff;
+}
+
+.cursormanito{
+    cursor: pointer;
+}
+
 input[type="radio"]::before {
     background-color: #023047 !important;
 }

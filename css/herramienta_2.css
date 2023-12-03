@@ -1,0 +1,454 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    height: 70px;
+    background: #023047;
+    background: -moz-linear-gradient(left, #023047 1%, #023047 100%);
+    background: -webkit-linear-gradient(left, #023047 1%, #023047 100%);
+    background: linear-gradient(to right, #023047 1%, #023047 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#023047', endColorstr='#023047', GradientType=1);
+    width: 100%;
+    z-index: 10000000;
+}
+
+
+
+.logo {
+    width: 18%;
+    height: 100%;
+    padding: 10px;
+    display: inline-block;
+}
+
+.cont-menu {
+    width: 20%;
+    margin-top: 25px;
+    float: right;
+    text-align: right;
+}
+
+.cont-menu a {
+    color: #fff;
+    margin-right: 22px;
+}
+
+.cont-menu a:hover {
+    color: #6e6b6a;
+}
+
+#menu_escritorio nav {
+    border: 1px solid #c8c9c8;
+    background-color: #fff;
+    position: fixed;
+    top: 70px;
+    width: 10%;
+    height: 100vh;
+    cursor: pointer;
+    box-shadow: 0px 1px 12px -2px rgba(0, 0, 0, 0.1);
+}
+
+#menu_escritorio nav ul li a {
+    font-family: 'Louis George Bold', sans-serif;
+    color: #6e6b6a;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#menu_escritorio nav ul li a:hover {
+    color: #fff;
+}
+
+#menu_escritorio nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu_escritorio nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+}
+
+#menu_escritorio nav li:hover {
+    background: #bababa;
+    border-left: 5px solid #023047;
+    transition: all 0.2s;
+}
+
+#menu_celular {
+    display: none;
+}
+
+#hamburguesa {
+    display: none;
+}
+
+main {
+    width: 100%;
+    padding-top: 70px;
+    background-color: #fbfbfb;
+}
+
+.barra-secundaria {
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 1px #c8c9c8;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 30px;
+}
+
+.grafica-ventas.grafica-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.grafica-ventas.grafica-1 .form-group {
+    margin-bottom: 25px;
+    max-width: 1000px; /* Ajustar el ancho máximo del formulario */
+    text-align: right; /* Alineación derecha para el texto de etiquetas */
+    margin: 10 auto; /* Centrar los campos horizontalmente */
+    margin-right: 100px; /* Ajustar el margen derecho para alejar del menú */
+}
+
+
+.grafica-ventas.grafica-1 label {
+    text-align: left;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    color: #333;
+}
+
+.grafica-ventas.grafica-1 .form-control {
+    width: 100%;
+    border: 1px solid #999;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Tu CSS anterior */
+
+/* Estilo para el botón "Agregar" */
+.btn-primary {
+    background-color: #023047;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-green {
+    background-color: #037012;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-gray {
+    background-color: #D0D5BB;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Añade este estilo para ajustar los botones en la misma línea */
+.button-container .col-md-4 {
+    display: inline-block;
+    margin-right: 10px; /* Espacio entre los botones (ajusta según tus necesidades) */
+}
+
+
+/* Estilo para la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+
+
+.panel {
+    margin-top: 30px;
+}
+
+.panel .panel-header {
+    padding: 5px 15px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.panel .panel-header .panel-title {
+    display: inline-block;
+    text-transform: uppercase;
+    border-bottom: 2px solid #023047;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.panel .panel-content {
+    padding: 15px;
+}
+
+.boxed-input {
+    border: 1px solid #e7e7e7 !important;
+    box-shadow: none !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.boxed-input:focus {
+    border-bottom: 1px solid #023047 !important;
+    box-shadow: 0 1px 0 0 #023047 !important;
+}
+
+.boxed-input.hasError:focus {
+    border-bottom-color: #e51c23 !important;
+    box-shadow: 0 1px 0 0 #e51c23 !important;
+}
+
+/* Estilo para la tabla */
+.table {
+    width: 100%; /* Ancho completo */
+    margin: 0 auto; /* Centrar horizontalmente */
+    text-align: center; /* Centrar contenido de la tabla */
+}
+
+/* Estilo para las celdas de la tabla */
+.table th,
+.table td {
+    padding: 10px;
+    text-align: center; /* Centrar el contenido de las celdas */
+}
+
+/* Estilo para los botones de la tabla */
+.btn-default {
+    margin: 0 auto; /* Centrar los botones horizontalmente */
+    /* ... Otros estilos ... */
+}
+
+
+table thead {
+    background-color: #023047;
+}
+
+table.table-dark thead {
+    background-color: #000d13;
+}
+
+table thead th {
+    color: #fff;
+}
+
+table a i {
+    text-decoration: none;
+    color: #989BA2;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #023047c6;
+}
+
+.btn-green:hover,
+.btn-green:focus {
+    background-color: #037012ca;
+}
+
+.btn-gray:hover,
+.btn-gray:focus {
+    background-color: #8f908b;
+    color: white;
+}
+
+.btn-secundary {
+    -webkit-background-size: 200% 200%;
+    background-size: 200%;
+    background-position: 50%;
+    color: #fff;
+    background-color: #768185;
+}
+
+.btn-secundary:hover,
+.btn-secundary:active:hover,
+.btn-secundary:focus {
+    background-color: #484D4F;
+    color: #fff;
+}
+
+input[type="radio"]::before {
+    background-color: #023047 !important;
+}
+
+input[type="radio"]::after {
+    border-color: #023047 !important;
+}
+
+input[type="checkbox"]:checked::after {
+    background-color: #023047 !important;
+    border-color: #023047 !important;
+}
+
+#checkAll::after {
+    border-color: white !important;
+}
+
+footer {
+    color: #ffffff;
+    text-align: center;
+}
+
+footer .footer-system {
+    background-color: #023047;
+    padding: 15px;
+}
+
+footer .footer-credits {
+    background-color: #023047;
+    padding: 5px;
+}
+
+.table-checkbox {
+    text-align: center;
+}
+
+.datepicker-icon {
+    top: 7px;
+    position: relative;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.filter::after {
+    font-size: 11px;
+    content: " \\/";
+}
+
+.profile-nav {
+    vertical-align: middle;
+    padding: 15px;
+    line-height: 23px;
+    height: 64px;
+    float: left;
+    text-decoration: none;
+    color: white;
+}
+
+.profile-nav:hover {
+    color: white;
+}
+
+.profile-nav .profile-nav-text {
+    display: inline-block;
+    line-height: 35px;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.profile-nav .profile-nav-text .profile-nav-text-name {
+    font-weight: bold;
+}
+
+.profile-nav .profile-nav-text .profile-nav-text-job {
+    font-size: 12px;
+}
+
+
+
+.button-container {
+    text-align: right; /* Centrar el botón horizontalmente */
+    margin-top: 20px; /* Agregar un margen superior al botón */
+    margin-bottom: 20px; 
+}
+
+.title-seccion {
+    font-size: 36px; /* Cambia el tamaño del texto a 36 pixels */
+    color: #000000; /* Cambia el color del texto a verde, puedes usar cualquier color que desees */
+    font-family: "Caviar Dreams Bold", sans-serif; /* Cambia la fuente del texto */
+    text-align: center; /* Centra el texto horizontalmente en su contenedor */
+    text-transform: uppercase;
+    /* Puedes agregar más estilos según tus preferencias */
+}
+
+/* Estilo para el contenedor del título */
+.form {
+    background-color: white; /* Cambia el color de fondo del contenedor */
+    padding: 15px; /* Agrega espaciado interno al contenedor */
+    
+    text-align: center; /* Centra el contenido horizontalmente */
+    
+    margin: 10px auto; /* Centra el contenedor horizontalmente en la página */
+    max-width: 600px; /* Establece un ancho máximo para el contenedor */
+    margin-left: 350px;
+}
+
+.form-group input[type="text"] {
+    width: 50%; /* Divide el ancho en 3 partes iguales */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0; /* Cambia este valor al color deseado */
+    margin: 0px 0px 0px 0px; /* Margen derecho de 10px para separar los cuadros de texto */
+}
+
+/* Estilo para las etiquetas */
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Estilo para el contenedor del formulario sin borde */
+.form-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-container {
+    width: 30%; /* Ajusta el ancho de los contenedores de los campos de texto */
+    text-align: center; /* Alineación centrada del contenido */
+}
+
+.form-control {
+    width: 100%; /* Asegura que los cuadros ocupen el ancho completo */
+    height: 36px; /* Ajusta la altura a 60px o el valor que desees */
+    font-size: 16px; /* Ajusta el tamaño de fuente */
+    margin: 10px 0; /* Espaciado vertical */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+

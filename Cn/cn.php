@@ -161,6 +161,185 @@ if($procedimiento == 'InicioSesion') {
     } else {
     echo "Error al ejecutar la función: " . $conn->error;
     }
+} else if($procedimiento == 'BuscadorPrestamo') {
+    $Folio = ($_POST['Folio'] !="") ? $_POST['Folio'] : NULL;
+    $Matricula = ($_POST['Matricula'] !="") ? $_POST['Matricula'] : NULL;
+    $Nombre = ($_POST['Nombre'] !="") ? $_POST['Nombre'] : NULL;
+    $FechaP = ($_POST['FechaP'] !="") ? $_POST['FechaP'] : NULL;
+    $FechaD = ($_POST['FechaD'] !="") ? $_POST['FechaD'] : NULL;
+    $Estado = ($_POST['Estado'] != "") ? $_POST['Estado'] : NULL;
+    // Obtén más parámetros según sea necesario
+    $sql = "CALL $procedimiento(?, ?, ?, ?, ?, ?)"; // Ajusta la consulta de acuerdo a la cantidad de parámetros
+    
+    $stmt = $conn->prepare($sql);
+
+    if ($stmt) {
+        $stmt->bind_param('ssssss', $Folio, $Matricula, $Nombre, $Estado, $FechaP, $FechaD); // Ajusta el tipo de datos según tus necesidades
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            echo json_encode($data);
+            
+        } else {
+            echo "Error al ejecutar el procedimiento: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        echo "Error al preparar la sentencia: " . $conn->error;
+    }
+} else if($procedimiento == 'verificacion_prestamo'){
+    $Matricula = (!empty($_POST['Matricula'])) ? $_POST['Matricula'] : '';
+
+
+    // Llamar a la función de MySQL con los parámetros
+    $sql = "SELECT ${procedimiento} ($Matricula) AS result";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+    // Obtener el resultado de la función
+    $row = $result->fetch_assoc();
+    $functionResult = $row["result"];
+    
+    echo $functionResult;
+    } else {
+    echo "Error al ejecutar la función: " . $conn->error;
+    }
+} else if($procedimiento == 'SolicitarPrestamo'){
+    $Matricula = (!empty($_POST['Matricula'])) ? $_POST['Matricula'] : '';
+    $Tipo = (!empty($_POST['Tipo'])) ? $_POST['Tipo'] : '';
+    $Plazo = (!empty($_POST['Plazo'])) ? $_POST['Plazo'] : '';
+    $ID_H = (!empty($_POST['ID_H'])) ? $_POST['ID_H'] : '';
+    $Cantidad = (!empty($_POST['Cantidad'])) ? $_POST['Cantidad'] : '';
+
+
+    // Llamar a la función de MySQL con los parámetros
+    $sql = "SELECT ${procedimiento} ($Matricula, '$Tipo', $Plazo, '$ID_H', $Cantidad) AS result";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+    // Obtener el resultado de la función
+    $row = $result->fetch_assoc();
+    $functionResult = $row["result"];
+    
+    echo $functionResult;
+    } else {
+    echo "Error al ejecutar la función: " . $conn->error;
+    }
+
+} else if ($procedimiento == 'InfoPrestamo') {
+    $id = (!empty($_POST['id'])) ? $_POST['id'] : NULL;
+    // Obtén más parámetros según sea necesario
+    $sql = "SELECT * FROM registrogeneral WHERE ID_Prestamo = ?";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $id);
+
+    if ($stmt) {
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            echo json_encode($data);
+        } else {
+            echo "Error al ejecutar el procedimiento: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        echo "Error al preparar la sentencia: " . $conn->error;
+    }
+} else if($procedimiento == 'PrestamoLocker'){
+    $Matricula = (!empty($_POST['Matricula'])) ? $_POST['Matricula'] : '';
+    $Locker = (!empty($_POST['Locker'])) ? $_POST['Locker'] : '';
+
+
+    // Llamar a la función de MySQL con los parámetros
+    $sql = "SELECT ${procedimiento} ($Matricula, '$Locker') AS result";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+    // Obtener el resultado de la función
+    $row = $result->fetch_assoc();
+    $functionResult = $row["result"];
+    
+    echo $functionResult;
+    } else {
+    echo "Error al ejecutar la función: " . $conn->error;
+    }
+
+} else if ($procedimiento == 'InfoHerramientaPrestamo') {
+    $id = (!empty($_POST['id'])) ? $_POST['id'] : NULL;
+    // Obtén más parámetros según sea necesario
+    $sql = "SELECT * FROM HerramientaPrestamo WHERE ID = ? ";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $id);
+
+    if ($stmt) {
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            echo json_encode($data);
+        } else {
+            echo "Error al ejecutar el procedimiento: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        echo "Error al preparar la sentencia: " . $conn->error;
+    }
+} else if($procedimiento == 'DevolverPrestamo'){
+    $ID_Prestamo = (!empty($_POST['ID'])) ? $_POST['ID'] : '';
+    $Matricula = (!empty($_POST['Matricula'])) ? $_POST['Matricula'] : '';
+    $Tipo = 'Herramientas';
+    $Codigo = (!empty($_POST['Codigo'])) ? $_POST['Codigo'] : '';
+    $Cantidad = (!empty($_POST['Cantidad'])) ? $_POST['Cantidad'] : '';
+    $flag = (!empty($_POST['Flag'])) ? $_POST['Flag'] : '';
+
+
+    // Llamar a la función de MySQL con los parámetros
+    $sql = "SELECT ${procedimiento} ('$Tipo', $ID_Prestamo, '$Codigo', $Cantidad, $flag) AS result";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+    // Obtener el resultado de la función
+    $row = $result->fetch_assoc();
+    $functionResult = $row["result"];
+    
+    echo $functionResult;
+    } else {
+    echo "Error al ejecutar la función: " . $conn->error;
+    }
+
+} else if ($procedimiento == 'InfoHerramienta_Prestamo') {
+    $id = (!empty($_POST['id'])) ? $_POST['id'] : NULL;
+    // Obtén más parámetros según sea necesario
+    $sql = "SELECT * FROM herramientaprestamo WHERE ID_H = ?";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $id);
+
+    if ($stmt) {
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            echo json_encode($data);
+        } else {
+            echo "Error al ejecutar el procedimiento: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        echo "Error al preparar la sentencia: " . $conn->error;
+    }
 }
 
 $conn->close();

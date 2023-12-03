@@ -12,10 +12,11 @@
     <div id="menu_escritorio">
         <nav>
             <ul>
-                <li><a href="Principal.html">Principal</a></li>
-                <li><a href="#">Préstamos</a></li>
+                <li><a href="Principal.php">Principal</a></li>
+                <li><a href="Prestamos.php">Préstamos</a></li>
                 <li><a href="Herramienta.php">Herramientas</a></li>
-                <li><a href="#">Usuarios</a></li>
+                <li><a href="Lock.php">Lockers</a></li>
+                <li><a href="Usuarios.html">Usuarios</a></li>
             </ul>
         </nav>
     </div>

@@ -95,6 +95,13 @@
     background: #4488aa;
     color: white;
   }
+
+.no-spin::-webkit-outer-spin-button,
+.no-spin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+  
   /*.table tr th {
     border: 2px solid #000;
     background: rgb(141, 188, 250);
@@ -211,8 +218,7 @@
   /**********fin-menu escritorio************/
   /************main*************/
   main {
-    width: 90%;
-    margin-left: 10%;
+    width: 100%;
     padding-top: 70px;
     background-color: #fbfbfb;
   }
@@ -227,13 +233,11 @@
     margin-bottom: 60px;
   }
   .grafica-1 {
-    width: 50%;
-    margin: 0 5%;
+    width: 100%;
     background-color: #fff;
     margin-bottom: 30px;
     box-shadow: 2px 6px 20px 0px rgba(0,0,0,0.1);
     border-radius: 20px;
-    padding: 25px;
   }
   .grafica-2 {
     width: 35%;
@@ -657,3 +661,147 @@
   }
   }
   /*********fin-responsive***********/
+
+  
+  /*********INICIO-Control-de-usuarios*************/
+  h1, a, p, h2, label {
+    font-family: 'Philosopher', sans-serif;
+}
+.hidden {
+  display: none;
+}
+
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+ /* Estilos generales */
+ body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.user {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  text-align: left;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Estilos específicos para el formato de mensajes */
+.user img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.user h2 {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 5px 5px 0 0;
+  margin: 0;
+}
+
+.user p {
+  padding: 5px;
+  margin: 0;
+}
+
+.user button {
+  background-color: #063261;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+/* Estilos generales del formulario */
+form {
+  max-width: 400px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centrar el formulario en la página */
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+ 
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para las etiquetas */
+label {
+  display: block; /* Colocar las etiquetas en una nueva línea */
+  margin-bottom: 5px;
+}
+
+/* Estilos para el botón */
+.button-admin {
+  background-color: #0d3a69;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.form-group {
+  margin-bottom: 40px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="file"] {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+
+
+   /*********FIN-Control-de-usuarios*************/
