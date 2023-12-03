@@ -633,6 +633,50 @@ function informacionHerramientaPrestamo(id_t) {
     });
 }
 
+function informacionPrestamoLocker(id_t) {
+
+    $.ajax({
+        url: "Cn/cn.php",
+        type: "POST",
+        data: {
+            procedimiento: 'InfoPrestamoLocker',
+            id: id_t,
+        },
+        success: function (response) {
+            //Si es una tabla que devuelva esto
+            var data = JSON.parse(response);
+            infoPrestamoLocker(data);
+            //Si es un echo que devuelva
+            //$("#resultado").html(response);
+        },
+        error: function (xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
+
+function infoPrestamoLocker(data){
+    var row = data[0];
+    var fechaD = row['Fecha_D'];
+    var estatus = row['estatus_oc'] == 1 ? 'Ocupado' : 'Libre';
+    document.getElementById('ID_Locker').value = row['ID_Prestamo'];
+    document.getElementById('Codigo_lock').textContent = row['locker'];
+    document.getElementById('Matricula_lock').textContent = row['Matricula'];
+    document.getElementById('FechaR_lock').textContent = row['Fecha_R'];
+    if(fechaD != ''){
+        document.getElementById('FechaD_lock').textContent = row['Fecha_D'];
+    } else {
+        document.getElementById('FechaD_lock').textContent = 'No devuelto';
+    }
+    if(estatus == 'Ocupado'){
+        document.getElementById('Estatus_lock').style.color = "#FF0000";
+    } else {
+        document.getElementById('Estatus_lock').style.color = "#1DD400";
+        document.getElementById('btndevolverlock').style.display = 'none';
+    }
+    document.getElementById('Estatus_lock').textContent = estatus;
+}
+
 function SolicitarPrestamoLocker() {
     let Mat = document.getElementById('Herramienta_N').value;
     let n_lock = document.getElementById('data_id').innerHTML;
@@ -646,7 +690,8 @@ function SolicitarPrestamoLocker() {
             Locker: n_lock
         },
         success: function (response) {
-            alert(response);
+            locker_ocupados();
+            document.getElementById('modal-agregar').style.display = 'none';
         },
         error: function (xhr, status, error) {
             console.error(error);
@@ -713,5 +758,66 @@ function DevolverPrestamo() {
             sticky: false,
             time: ''
         });
+    }
+}
+
+function DevolverPrestamoLocker() {
+    var id = document.getElementById('ID_Locker').value;
+
+    $.ajax({
+        url: "Cn/cn.php",
+        type: "POST",
+        data: {
+            procedimiento: 'DevolverPrestamoLocker',
+            ID: id,
+        },
+        success: function (response) {
+            console.log(response);
+            jQuery.gritter.add({
+                title: '!Exito!',
+                text: 'El prestamo ha sido realizado',
+                class_name: 'growl-success',
+                sticky: false,
+                time: ''
+            });
+            BuscadorPrestamo(1);
+            document.getElementById('modal-locker').style.display = 'none';
+        },
+        error: function (xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
+
+function locker_ocupados(){
+
+    $.ajax({
+        url: "Cn/cn.php",
+        type: "POST",
+        data: {
+            procedimiento: 'locker_ocupados',
+        },
+        success: function (response) {
+            //Si es una tabla que devuelva esto
+            var data = JSON.parse(response);
+            Infolocker_ocupados(data);
+            //Si es un echo que devuelva
+            //$("#resultado").html(response);
+        },
+        error: function (xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
+
+function Infolocker_ocupados(data){
+    for (var i = 0; i < data.length; i++) {
+        var row = data[i];
+        var locker = row['Locker'];
+        var click = document.getElementById(locker);
+        click.removeAttribute("onclick");
+        var S_locker = locker + '-img';
+        var Imagen = document.getElementById(S_locker);
+        Imagen.src = "imagenes/R.png";
     }
 }

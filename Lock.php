@@ -16,7 +16,7 @@
 <body>
 
     <?php
-        include 'leftpanel.php';
+    include 'leftpanel.php';
     ?>
 
 
@@ -34,7 +34,7 @@
                 <!-- Bloque 1 -->
                 <div class="w-full grid grid-cols-7 border border-2 border-gray-300 py-1 px-1 gap-x-1">
 
-                
+
                     <!-- 6638 -->
                     <div class=" w-full grid grid-rows-3 gap-y-3 border border-2">
                         <!-- 6638A -->
@@ -52,7 +52,8 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6638A-img" src="imagenes/G.png" alt="Casillero"
+                                            class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +73,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6638B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +93,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6638C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +117,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6639A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +137,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6639B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +157,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6639B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -180,7 +181,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6640A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +201,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6640B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +221,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6640C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -244,7 +245,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6641A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -264,7 +265,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6641B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -284,7 +285,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6641C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -308,7 +309,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6642A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -328,7 +329,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6642B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -348,7 +349,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6642C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -372,7 +373,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6643A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +393,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6643B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -412,7 +413,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6643C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -436,7 +437,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6644A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -456,7 +457,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6644B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -476,7 +477,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6644C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -503,7 +504,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6645A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -523,7 +524,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6645B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -543,7 +544,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6645C-img"src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -567,7 +568,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6646A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -587,7 +588,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6646B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -607,7 +608,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6646C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -631,7 +632,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6647A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -651,7 +652,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6647B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -671,7 +672,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6647C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -695,7 +696,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6648A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -715,7 +716,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6648B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -735,7 +736,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6648C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -759,7 +760,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6649A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -779,7 +780,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6649B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -799,7 +800,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6649C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -823,7 +824,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6650A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -843,7 +844,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6650B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -863,7 +864,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6650C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -887,7 +888,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6651A-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -907,7 +908,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6651B-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -927,7 +928,7 @@
 
                                 <div class="w-1/2 h-auto  justify-items-start">
                                     <div>
-                                        <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
+                                        <img id="L6651C-img" src="imagenes/G.png" alt="Casillero" class="object-contain h-8">
                                     </div>
                                 </div>
                             </div>
@@ -947,11 +948,12 @@
 
             <!-- Contenido del modal -->
             <!--Body-->
-            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-32 sm:align-middle sm:w-2/4">
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-32 sm:align-middle sm:w-2/4">
                 <div class="bg-blue-950 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div class="w-full px-10 h-24 bg-blue-950 grid content-center">
                         <h1 class="text-5xl text-center text-white title-seccion"> Solicitud de locker</h1>
-                        <p  class="hidden"></p>
+                        <p class="hidden"></p>
                     </div>
                 </div>
 
@@ -966,7 +968,7 @@
                             <h2 id="data_id" class="label-text"></h2>
                             <!--<input type="text" name="HerramientaNme" id="Herramienta_N"
                                 class="campo_B p-1 border-2 border-gray-300" disabled="disabled">-->
-                            
+
                         </div>
 
                         <div class="w-24 flex flex-col">
@@ -1003,7 +1005,7 @@
                 <div class="w-full flex flex-row justify-between bg-gray-50 px-5 gap-x-5">
 
                     <div class="w-1/3 py-3 ">
-                        <button id="btnAgregar" onclick="AgregarHerramienta();"
+                        <button id="btnAgregar" onclick=""
                             class="btn-third btn-s py-1 px-7 w-full">
                             Liberar locker
                         </button>
@@ -1023,17 +1025,16 @@
             </div>
         </div>
     </div>
-    
-<script src="Scripts/Sps_functions.js"></script>
-<script src="Scripts/jquery.gritter.min.js"></script>
+    <script src="Scripts/Sps_functions.js"></script>
+    <script src="Scripts/jquery.gritter.min.js"></script>
     <script>
-
-        function modalInfo(data){
+        locker_ocupados();
+        function modalInfo(data) {
             document.getElementById('data_id').innerHTML = data;
             document.getElementById('modal-agregar').style.display = 'block';
         }
-    
-        document.getElementById('closeModal').addEventListener('click', function() {
+
+        document.getElementById('closeModal').addEventListener('click', function () {
             document.getElementById('modal-agregar').style.display = 'none';
         });
     </script>

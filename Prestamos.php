@@ -264,7 +264,7 @@
                 <div class="w-full flex flex-row bg-white gap-x-5 py-5 px-5">
 
                     <!-- Izquierda -->
-                    <input id="ID_Prestamo" type="text" class="hidden"/>
+                    <input id="ID_Prestamo" type="text" class="hidden" />
                     <div class="w-full bg-white flex flex-col py-5 px-4 gap-y-5 border-2 border-gray-300">
 
                         <div class="w-full">
@@ -314,138 +314,194 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="Scripts/Sps_functions.js"></script>
-        <script src="Scripts/jquery.gritter.min.js"></script>
-        <script>
+    <div id="modal-locker" class="hidden fixed z-10 inset-0 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+
+            <!-- Contenido del modal -->
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-32 sm:align-middle sm:w-1/3">
+                <div class="bg-blue-950 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="w-full px-10 h-16 bg-blue-950 grid content-center">
+                        <h3 class="text-3xl text-center text-white title-seccion">Informacion Locker</h3>
+                        <input id="ID_Locker" type="text" class="hidden" />
+                    </div>
+                </div>
+                <div class="flex flex-row bg-white gap-y-5 py-5 px-10">
+                    <div class="w-full flex flex-col gap-y-2 w-1/3">
+                        <h2 class="label-text">Codigo: <span id="Codigo_lock">0</span></h2>
+                        <h2 class="label-text">Matricula: <span id="Matricula_lock">20070023</span></h2>
+                        <h2 class="label-text">Fecha Registro: <span id="FechaR_lock">0</span></h2>
+                        <h2 class="label-text">Fecha Devolucion: <span id="FechaD_lock"></span></h2>
+                        <h2 class="label-text">Estatus locker: <span id="Estatus_lock"></span></h2>
+                    </div>
+                    <div class="flex flex-row items-center w-2/3">
+                        <div class="w-1/2 h-auto grid justify-items-end">
+                            <div>
+                                <img src="imagenes/l.png" alt="Casillero" class="object-contain h-24">
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 h-auto  justify-items-start">
+                            <div>
+                                <img src="imagenes/G.png" alt="Casillero" class="object-contain h-8" style="display: none">
+                                <img src="imagenes/R.png" alt="Casillero" class="object-contain h-8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse gap-x-2">
+                    <button id="btndevolverlock" onclick="DevolverPrestamoLocker();" class="btn-primary btn-s py-1 px-7 w-2/4">
+                        Devolver
+                    </button>
+                    <button id="closeModal-locker" class="btn-gray btn-s py-1 px-7 w-2/4 text-black">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/Sps_functions.js"></script>
+    <script src="Scripts/jquery.gritter.min.js"></script>
+    <script>
+        BuscadorPrestamo(1);
+
+        function restablecer() {
+            document.getElementById("inputFolio").value = "";
+            document.getElementById("inputMatricula").value = "";
+            document.getElementById("inputNombre").value = "";
+            document.getElementById("inputFechaP").value = "";
+            document.getElementById("inputFechaD").value = "";
+            document.getElementById("inputEstado").value = "";
+
             BuscadorPrestamo(1);
+        }
 
-            function restablecer() {
-                document.getElementById("inputFolio").value = "";
-                document.getElementById("inputMatricula").value = "";
-                document.getElementById("inputNombre").value = "";
-                document.getElementById("inputFechaP").value = "";
-                document.getElementById("inputFechaD").value = "";
-                document.getElementById("inputEstado").value = "";
+        document.getElementById('btnSolicitar').addEventListener('click', function () {
+            BuscadorListaHerramienta();
+            document.getElementById('modal-prestar').style.display = 'block';
+        });
 
-                BuscadorPrestamo(1);
+        document.getElementById('closeModal').addEventListener('click', function () {
+            document.getElementById('modal-prestar').style.display = 'none';
+        });
+
+        document.getElementById('closeModal-cantidad').addEventListener('click', function () {
+            document.getElementById('modal-cantidad').style.display = 'none';
+        });
+
+        document.getElementById('closeModal-locker').addEventListener('click', function () {
+            document.getElementById('modal-locker').style.display = 'none';
+        });
+
+        document.getElementById('closeModalMod').addEventListener('click', function () {
+            document.getElementById('modal-modificar').style.display = 'none';
+        });
+
+        function seleccionarHerramienta(fila) {
+            let codigo = fila.cells[0].innerHTML;
+            let nombre = fila.cells[1].innerHTML;
+            let cantidad_t = fila.cells[2].innerHTML;
+            document.getElementById('c_h').innerHTML = codigo;
+            document.getElementById('n_h').innerHTML = nombre;
+            document.getElementById('ct_h').innerHTML = cantidad_t;
+            document.getElementById('modal-cantidad').style.display = 'block';
+
+        }
+
+        function infodataPrestamo(data) {
+            var row = data[0];
+            var estatus = row['estatus_p'];
+            document.getElementById('ID_Prestamo').value = row['ID_Prestamo'];
+            document.getElementById('Mat_text').textContent = row['Matricula'];
+            document.getElementById('Dias_text').textContent = row['Dias_P'];
+            if (estatus == 0) {
+                document.getElementById('btndevolver').style.display = 'none';
             }
+            //herramientasprestadas(ID);
+        }
 
-            document.getElementById('btnSolicitar').addEventListener('click', function () {
-                BuscadorListaHerramienta();
-                document.getElementById('modal-prestar').style.display = 'block';
-            });
+        function seleccionar() {
+            let codigo = document.getElementById('c_h').innerHTML;
+            let nombre = document.getElementById('n_h').innerHTML;
+            let cantidad_t = document.getElementById('ct_h').innerHTML;
+            let cantidad = document.getElementById('cant_h').value;
 
-            document.getElementById('closeModal').addEventListener('click', function () {
-                document.getElementById('modal-prestar').style.display = 'none';
-            });
-
-            document.getElementById('closeModal-cantidad').addEventListener('click', function () {
+            if (cantidad <= cantidad_t && cantidad > 0) {
+                var tabla = document.getElementById("tab-selec");
+                var fila = tabla.insertRow();
+                let New_codigo = fila.insertCell(0);
+                let New_Nombre = fila.insertCell(1);
+                let New_Cantidad = fila.insertCell(2);
+                New_codigo.innerHTML = codigo;
+                New_Nombre.innerHTML = nombre;
+                New_Cantidad.innerHTML = cantidad;
+                let d_fila = document.getElementById('' + codigo + '');
+                d_fila.style.backgroundColor = '#D1D5DB';
+                d_fila.removeAttribute("onclick");
                 document.getElementById('modal-cantidad').style.display = 'none';
-            });
-
-            document.getElementById('closeModalMod').addEventListener('click', function () {
-                document.getElementById('modal-modificar').style.display = 'none';
-            });
-
-            function seleccionarHerramienta(fila) {
-                let codigo = fila.cells[0].innerHTML;
-                let nombre = fila.cells[1].innerHTML;
-                let cantidad_t = fila.cells[2].innerHTML;
-                document.getElementById('c_h').innerHTML = codigo;
-                document.getElementById('n_h').innerHTML = nombre;
-                document.getElementById('ct_h').innerHTML = cantidad_t;
-                document.getElementById('modal-cantidad').style.display = 'block';
-
+            } else if (cantidad > cantidad_t) {
+                jQuery.gritter.add({
+                    title: '!ERROR!',
+                    text: 'La cantidad solicitada es mayor a la disponible',
+                    class_name: 'growl-danger',
+                    sticky: false,
+                    time: ''
+                });
+            } else if (cantidad <= 0) {
+                jQuery.gritter.add({
+                    title: '!ERROR!',
+                    text: 'Ingresa un numero valido',
+                    class_name: 'growl-danger',
+                    sticky: false,
+                    time: ''
+                });
             }
+        }
 
-            function infodataPrestamo(data) {
-                var row = data[0];
-                var estatus = row['estatus_p'];
-                document.getElementById('ID_Prestamo').value = row['ID_Prestamo'];
-                document.getElementById('Mat_text').textContent = row['Matricula'];
-                document.getElementById('Dias_text').textContent = row['Dias_P'];
-                if(estatus == 0){
-                    document.getElementById('btndevolver').style.display = 'none';
-                }
-                //herramientasprestadas(ID);
+        function panelprestamo(fila) {
+            var id = fila.getAttribute("data-id");
+            var tipo = fila.getAttribute("data-Tipo");
+            if (tipo == 'Herramientas') {
+                informacionPrestamo(id);
+                document.getElementById('modal-modificar').style.display = 'block';
+            } else if (tipo == 'Locker') {
+                informacionPrestamoLocker(id);
+                document.getElementById('modal-locker').style.display = 'block';
             }
+        }
 
-            function seleccionar() {
-                let codigo = document.getElementById('c_h').innerHTML;
-                let nombre = document.getElementById('n_h').innerHTML;
-                let cantidad_t = document.getElementById('ct_h').innerHTML;
-                let cantidad = document.getElementById('cant_h').value;
-
-                if (cantidad <= cantidad_t && cantidad > 0) {
-                    var tabla = document.getElementById("tab-selec");
-                    var fila = tabla.insertRow();
-                    let New_codigo = fila.insertCell(0);
-                    let New_Nombre = fila.insertCell(1);
-                    let New_Cantidad = fila.insertCell(2);
-                    New_codigo.innerHTML = codigo;
-                    New_Nombre.innerHTML = nombre;
-                    New_Cantidad.innerHTML = cantidad;
-                    let d_fila = document.getElementById('' + codigo + '');
-                    d_fila.style.backgroundColor = '#D1D5DB';
-                    d_fila.removeAttribute("onclick");
-                    document.getElementById('modal-cantidad').style.display = 'none';
-                } else if (cantidad > cantidad_t) {
-                    jQuery.gritter.add({
-                        title: '!ERROR!',
-                        text: 'La cantidad solicitada es mayor a la disponible',
-                        class_name: 'growl-danger',
-                        sticky: false,
-                        time: ''
-                    });
-                } else if (cantidad <= 0) {
-                    jQuery.gritter.add({
-                        title: '!ERROR!',
-                        text: 'Ingresa un numero valido',
-                        class_name: 'growl-danger',
-                        sticky: false,
-                        time: ''
-                    });
-                }
+        function infoHPrestamo(data) {
+            var table = "<table id='tabla-info' class='table-data table-dark table-fixed border border-collapse w-full border border-blue-950'>" +
+                "<thead>" +
+                "<tr class='text-center'>" +
+                "<th>CODIGO</th>" +
+                "<th>NOMBRE</th>" +
+                "<th>CANTIDAD</th>" +
+                "</tr>" +
+                "<thead> <tbody>";
+            if (data.length == 0) {
+                table += "<tr>" +
+                    "<td colspan='3'>No se encontraron resultados.</td>" +
+                    "</tr>";
             }
-
-            function panelprestamo(fila) {
-                var id = fila.getAttribute("data-id");
-                var tipo = fila.getAttribute("data-Tipo");
-                if (tipo == 'Herramientas') {
-                    informacionPrestamo(id);
-                    document.getElementById('modal-modificar').style.display = 'block';
-                } else if(tipo == 'Locker'){
-
-                }
-            }
-
-            function infoHPrestamo(data) {
-                var table = "<table id='tabla-info' class='table-data table-dark table-fixed border border-collapse w-full border border-blue-950'>" +
-                    "<thead>" +
-                    "<tr class='text-center'>" +
-                    "<th>CODIGO</th>" +
-                    "<th>NOMBRE</th>" +
-                    "<th>CANTIDAD</th>" +
-                    "</tr>" +
-                    "<thead> <tbody>";
-                if (data.length == 0) {
-                    table += "<tr>" +
-                        "<td colspan='3'>No se encontraron resultados.</td>" +
-                        "</tr>";
-                }
-                for (var i = 0; i < data.length; i++) {
-                    var row = data[i];
-                    table += "<tr>" +
-                        "<td class='text-center'>" + row['codigo'] + "</td>" +
-                        "<td>" + row['Nombre'] + "</td>" +
-                        "<td class='text-center'>" + row['Cantidad'] + "</td>" +
-                        "</tr>";
-                };
-                table += "</tbody></table>";
-                $("#table-infoHerramienta").html(table);
-            }
-        </script>
+            for (var i = 0; i < data.length; i++) {
+                var row = data[i];
+                table += "<tr>" +
+                    "<td class='text-center'>" + row['codigo'] + "</td>" +
+                    "<td>" + row['Nombre'] + "</td>" +
+                    "<td class='text-center'>" + row['Cantidad'] + "</td>" +
+                    "</tr>";
+            };
+            table += "</tbody></table>";
+            $("#table-infoHerramienta").html(table);
+        }
+    </script>
 </body>
 
 </html>

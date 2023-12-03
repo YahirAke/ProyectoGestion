@@ -320,11 +320,70 @@ if($procedimiento == 'InicioSesion') {
 } else if ($procedimiento == 'InfoHerramienta_Prestamo') {
     $id = (!empty($_POST['id'])) ? $_POST['id'] : NULL;
     // Obtén más parámetros según sea necesario
-    $sql = "SELECT * FROM herramientaprestamo WHERE ID_H = ?";
+    $sql = "SELECT * FROM herramientaprestamo WHERE ID_H = ? AND estatus_p = true";
     
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $id);
 
+    if ($stmt) {
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            echo json_encode($data);
+        } else {
+            echo "Error al ejecutar el procedimiento: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        echo "Error al preparar la sentencia: " . $conn->error;
+    }
+} else if ($procedimiento == 'InfoPrestamoLocker') {
+    $id = (!empty($_POST['id'])) ? $_POST['id'] : NULL;
+    // Obtén más parámetros según sea necesario
+    $sql = "SELECT * FROM locker_info WHERE ID_Prestamo = ?";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $id);
+
+    if ($stmt) {
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            echo json_encode($data);
+        } else {
+            echo "Error al ejecutar el procedimiento: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        echo "Error al preparar la sentencia: " . $conn->error;
+    }
+} else if($procedimiento == 'DevolverPrestamoLocker'){
+    $ID_Prestamo = (!empty($_POST['ID'])) ? $_POST['ID'] : '';
+    // Llamar a la función de MySQL con los parámetros
+    $sql = "SELECT ${procedimiento} ($ID_Prestamo) AS result";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+    // Obtener el resultado de la función
+    $row = $result->fetch_assoc();
+    $functionResult = $row["result"];
+    
+    echo $functionResult;
+    } else {
+    echo "Error al ejecutar la función: " . $conn->error;
+    }
+
+} else if ($procedimiento == 'locker_ocupados') {
+    // Obtén más parámetros según sea necesario
+    $sql = "SELECT * FROM locker WHERE Estatus = false";
+    
+    $stmt = $conn->prepare($sql);
     if ($stmt) {
         if ($stmt->execute()) {
             $result = $stmt->get_result();
