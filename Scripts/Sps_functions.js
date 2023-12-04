@@ -821,3 +821,42 @@ function Infolocker_ocupados(data){
         Imagen.src = "imagenes/R.png";
     }
 }
+
+function Usuarios(){
+    var palabra = document.getElementById('Buscador_txt').value;
+    $.ajax({
+        url: "Cn/cn.php",
+        type: "POST",
+        data: {
+            procedimiento: 'Usuarios',
+            Palabra: palabra,
+        },
+        success: function (response) {
+            //Si es una tabla que devuelva esto
+            var data = JSON.parse(response);
+            tb_Usuarios(data);
+            //Si es un echo que devuelva
+            //$("#resultado").html(response);
+        },
+        error: function (xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
+
+function tb_Usuarios(data){
+    var tb = "";
+    for (var i = 0; i < data.length; i++) {
+        var row = data[i];
+        tb = tb + "<div class='user w-4/5 p-6 m-6'>" +
+        "<img src='imagenes/Perfil.png' alt='Usuario 1'>" +
+        "<h2>" + row['Matricula'] +"</h2>" +
+        "<p>Nombre: "+ row['Nombre'] + row['Apellido'] +"</p>" +
+        "<p>Correo: "+ row['Email']+ "</p>" +
+        "<button>Modificar</button>" +
+        "<button>Eliminar</button>" +
+        "</div>";
+    }
+
+    $("#panel-user").html(tb);
+}

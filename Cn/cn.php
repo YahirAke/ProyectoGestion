@@ -399,6 +399,29 @@ if($procedimiento == 'InicioSesion') {
     } else {
         echo "Error al preparar la sentencia: " . $conn->error;
     }
+} else if ($procedimiento == 'Usuarios') {
+    $parametro = (!empty($_POST['Palabra'])) ? '%'.$_POST['Palabra'].'%' : '%%';
+    // Obtén más parámetros según sea necesario
+    $sql = "SELECT * FROM usuario WHERE Nombre like ? OR Apellido like ? AND Estado = true";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $parametro, $parametro);
+
+    if ($stmt) {
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            echo json_encode($data);
+        } else {
+            echo "Error al ejecutar el procedimiento: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        echo "Error al preparar la sentencia: " . $conn->error;
+    }
 }
 
 $conn->close();
