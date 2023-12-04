@@ -850,11 +850,16 @@ function tb_Usuarios(data){
         var row = data[i];
         tb = tb + "<div class='user w-4/5 p-6 m-6'>" +
         "<img src='imagenes/Perfil.png' alt='Usuario 1'>" +
-        "<h2>" + row['Matricula'] +"</h2>" +
-        "<p>Nombre: "+ row['Nombre'] + row['Apellido'] +"</p>" +
-        "<p>Correo: "+ row['Email']+ "</p>" +
+        "<h2>N° " + row['Matricula'] +"</h2>" +
+        "<p>Nombre: <br>"+ row['Nombre'] + " " + row['Apellido'] +"</p>" +
+        "<p>Correo: </p>" +
+        "<div class='w-full'>" +
+        "<label class='hover:text-black overflow-hidden whitespace-nowrap text-ellipsis' title='"+ row['Email']+"'>"+ row['Email']+ "</label>" +
+        "</div>" +
+        "<div class='flex flex-row gap-x-2'>" +
         "<button>Modificar</button>" +
         "<button>Eliminar</button>" +
+        "</div>" +
         "</div>";
     }
 

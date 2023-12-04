@@ -13,79 +13,53 @@
 
 
 </head>
-<header>
-    <div class="logo">
-        <img src="imagenes/Logo-prestatec-solid.png" alt="" width="100%" />
-    </div>
-    <div class="cont-menu">
-        <a href="index.html">Iniciar sesión</a>
-    </div>
-    <!--fin-nav-->
-</header>
-<div id="menu_escritorio">
-    <nav>
-        <ul>
-            <li><a href="Principal.php">Principal</a></li>
-            <li><a href="Prestamos.php">Préstamos</a></li>
-            <li><a href="Herramienta.php">Herramientas</a></li>
-            <li><a href="Lock.php">Lockers</a></li>
-            <li><a href="Usuario.html">Usuarios</a></li>
-        </ul>
-    </nav>
-</div>
 
 <body class="h-3/4 flex flex-col bg-cuerpo">
-    <div>
-        <nav class="bg-barra w-full text-white flex flex-col md:flex-row md:justify-between md:px-7 md:py-5 text-xl">
-            <div class="flex justify-center md:gap-4">
-                <h1 class="text-center text-2xl font-bold ">Control de usuarios</h1>
-            </div>
-            <div class="flex flex-col md:flex-row text-center md:gap-5">
-                <ul class="py-1 hover:underline">
-                    <li><a href="Perfil.html">Perfil</a></li>
-                </ul>
-                <ul class="py-1 hover:underline">
-                    <li><a href="Publicaciones.html">Herramientas</a></li>
-                </ul>
-                <ul class="py-1 hover:underline">
-                    <li><a href="index.html">Salir</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <?php
+    include 'leftpanel.php';
+    ?>
 
-    <div class="bg-centro mx-auto p-5 w-full md:w-full md:px-0 md:mx-auto">
-        <div class="flex flex-col mx-auto p-2 md:w-full md:p-0">
-            <div class="bg-grisul p-4 md:w-3/4 md:h-full md:mx-auto text-center">
-                <h1 class="text-center text-2xl font-bold ">Búscar usuario</h1>
-                <div class="text-gray-600">
-                    <input id="Buscador_txt" type="search" name="search" placeholder="Buscar..."
-                        class="w-3/4 border-2 border-gray-300 bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
-                    <button type="submit"
-                        class="bg-blue-900 text-white px-5 py-2  mx-auto rounded-lg hover:bg-yellow-700 focus:outline-none focus:ring focus:border-blue-100 md:px-5 md:py-2">Buscar</button>
-                </div><br>
-                <div class="flex flex-col md:flex-row mb-4 justify-center">
-                    <div class="w-full md:w-1/3">
-                        <p>Rol:</p>
-                        <select id="seleccionatamanio" name="tamanio">
-                            <option value="administrador">Administrador</option>
-                            <option value="alumno">Alumno</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
 
-            <div class="bg-centro mx-auto p-5 w-full md:w-full md:px-0 md:mx-auto">
+    <div class="panel-main flex flex-col gap-3">
+
+        <div class="barra-secundaria">
+            <h1 class="title-seccion">Usuarios</h1>
+        </div>
+        <div class="w-full">
+            <div class="bg-centro mx-auto w-full md:w-full md:px-0 md:mx-auto">
                 <div class="flex flex-col mx-auto p-2 md:w-full md:p-0">
                     <div class="bg-grisul p-4 md:w-3/4 md:h-full md:mx-auto text-center">
-                        <title>Panel de Usuarios</title>
-                        </head>
+                        <h1 class="text-center text-2xl font-bold ">Búscar usuario</h1>
+                        <div class="text-gray-600">
+                            <input id="Buscador_txt" type="search" name="search" placeholder="Buscar..."
+                                class="w-3/4 border-2 border-gray-300 bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
+                            <button onclick="Usuarios();" type="submit"
+                                class="bg-blue-900 text-white px-5 py-2  mx-auto rounded-lg hover:bg-yellow-700 focus:outline-none focus:ring focus:border-blue-100 md:px-5 md:py-2">Buscar</button>
+                        </div><br>
+                        <div class="flex flex-col md:flex-row mb-4 justify-center">
+                            <div class="w-full md:w-1/3">
+                                <p>Rol:</p>
+                                <select id="seleccionatamanio" name="tamanio" class="campo_B upcase p-1 border-2 border-gray-300">
+                                    <option value="administrador">Administrador</option>
+                                    <option value="alumno">Alumno</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="bg-centro mx-auto p-5 w-full md:w-full md:px-0 md:mx-auto">
-                            <div class="container">
-                                <h1>Panel de Usuarios</h1>
-                                <div id="panel-user" class=" grid grid-cols-3 justify-items-center">
-                                    <!-- Agrega más usuarios con fotos de perfil según sea necesario -->
+                    <div class="bg-centro mx-auto p-5 w-full md:w-full md:px-0 md:mx-auto">
+                        <div class="flex flex-col mx-auto p-2 md:w-full md:p-0">
+                            <div class="bg-grisul p-4 md:w-full md:h-full md:mx-auto text-center">
+                                <title>Panel de Usuarios</title>
+                                </head>
+
+                                <div class="bg-centro mx-auto p-5 w-full md:w-full md:px-0 md:mx-auto">
+                                    <div class="w-full">
+                                        <h1>Panel de Usuarios</h1>
+                                        <div id="panel-user" class=" grid grid-cols-5 justify-items-center">
+                                            <!-- Agrega más usuarios con fotos de perfil según sea necesario -->
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +92,7 @@
 
                 <div class="flex flex-col bg-white gap-x-5">
                     <form onsubmit="enviarFormulario(event)">
-        
+
                         <p class="lable">Matrícula</p>
                         <input type="Matricula" placeholder="" id="Matricula">
                         <p class="lable">Nombre(s)</p>
@@ -128,9 +102,9 @@
                         <p class="lable">Email</p>
                         <input type="Email" placeholder="" id="Email">
                         <p class="lable">Contraseña</p>
-                        <input type="password" placeholder="********" id="Password"> 
+                        <input type="password" placeholder="********" id="Password">
                         <p class="lable">Confirmar contraseña</p>
-                        <input type="password" placeholder="********" id="Conf_password">        
+                        <input type="password" placeholder="********" id="Conf_password">
                     </form>
                 </div>
             </div>
